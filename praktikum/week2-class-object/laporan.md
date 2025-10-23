@@ -147,7 +147,8 @@ public class MainProduk {
 
 ## Hasil Eksekusi
 
-!![alt text](<Screenshot 2025-10-23 192354.png>)
+<img width="815" height="664" alt="Screenshot 2025-10-23 192354" src="https://github.com/user-attachments/assets/bbff8064-17f7-42f6-ac96-a8a4aeb154e9" />
+
 ---
 
 ## Analisis
@@ -169,8 +170,11 @@ Analisis
 
 ## Kesimpulan
 
-Dengan menggunakan konsep **class** dan **object**, program menjadi lebih terstruktur, mudah dikembangkan, serta mendukung prinsip **reusability** dalam pemrograman berorientasi objek.
+Class dan object memudahkan representasi entitas dunia nyata ke dalam program, sehingga kode lebih terstruktur dan mudah dipahami.
 
+Enkapsulasi melindungi data dari akses langsung dan membantu menjaga konsistensi informasi produk.
+
+Penggunaan getter dan setter menjadi mekanisme standar untuk membaca dan mengubah data secara aman.
 ---
 
 ## Quiz
