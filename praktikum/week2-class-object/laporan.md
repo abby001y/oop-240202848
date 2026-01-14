@@ -171,6 +171,11 @@ Analisis
 
 Dengan menggunakan konsep **class** dan **object**, program menjadi lebih terstruktur, mudah dikembangkan, serta mendukung prinsip **reusability** dalam pemrograman berorientasi objek.
 
+Class dan object memudahkan representasi entitas dunia nyata ke dalam program, sehingga kode lebih terstruktur dan mudah dipahami.
+
+Enkapsulasi melindungi data dari akses langsung dan membantu menjaga konsistensi informasi produk.
+
+Penggunaan getter dan setter menjadi mekanisme standar untuk membaca dan mengubah data secara aman.
 ---
 
 ## Quiz
