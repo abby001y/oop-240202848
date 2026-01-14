@@ -2,32 +2,49 @@
 Topik: [Tuliskan judul topik, misalnya "Class dan Object"]
 
 ## Identitas
-- Nama  : [Nama Mahasiswa]
-- NIM   : [NIM Mahasiswa]
-- Kelas : [Kelas]
+- Nama  : [Abbi Priyoguno]
+- NIM   : [240202848]
+- Kelas : [3IKRB]
 
 ---
 
 ## Tujuan
-(Tuliskan tujuan praktikum minggu ini.  
-Contoh: *Mahasiswa memahami konsep class dan object serta dapat membuat class Produk dengan enkapsulasi.*)
+(
+1. Mahasiswa mampu menampilkan data secara terstruktur menggunakan komponen TableView JavaFX.
+
+2. Mahasiswa mampu menerapkan Lambda Expression untuk menyederhanakan penulisan event handling.
+
+3. Mahasiswa mampu menghubungkan secara penuh antarmuka GUI dengan Data Access Object (DAO) melalui Service Layer.
+
+4. Mahasiswa mampu membangun fitur interaktif (Tambah dan Hapus) yang berdampak langsung pada database PostgreSQL.*)
 
 ---
 
 ## Dasar Teori
-(Tuliskan ringkasan teori singkat (3–5 poin) yang mendasari praktikum.  
-Contoh:  
-1. Class adalah blueprint dari objek.  
-2. Object adalah instansiasi dari class.  
-3. Enkapsulasi digunakan untuk menyembunyikan data.)
+(
+1. TableView: Komponen JavaFX yang digunakan untuk menampilkan data dalam bentuk baris dan kolom. Menggunakan ObservableList untuk memantau perubahan data secara otomatis pada UI.
+
+2. Lambda Expression: Fitur Java yang memungkinkan penulisan fungsi anonim secara ringkas, sangat efektif digunakan untuk implementasi Functional Interface seperti EventHandler pada JavaFX.
+
+3. Event-Driven Architecture: Model pemrograman di mana tindakan pengguna (klik hapus, klik tambah) memicu urutan proses dari View ke Controller, Service, hingga ke Database.
+
+4. Data Binding: Proses menghubungkan properti objek model (misal: Product) dengan kolom di TableView menggunakan CellValueFactory.)
 
 ---
 
 ## Langkah Praktikum
-(Tuliskan Langkah-langkah dalam prakrikum, contoh:
-1. Langkah-langkah yang dilakukan (setup, coding, run).  
-2. File/kode yang dibuat.  
-3. Commit message yang digunakan.)
+(
+1. Persiapan: Melanjutkan proyek dari Minggu 12. Memastikan library JDBC PostgreSQL sudah terkonfigurasi.
+
+2. Modifikasi View: Mengganti komponen ListView atau TextArea lama menjadi TableView<Product>.
+
+3. Konfigurasi Kolom: Menentukan kolom (Kode, Nama, Harga, Stok) dan menghubungkannya dengan atribut di kelas Product.
+
+4. Implementasi Lambda: Menambahkan event listener pada tombol Hapus menggunakan sintaks e -> { ... }.
+
+5. Implementasi loadData(): Membuat metode untuk mengambil list produk dari ProductService.findAll() dan memasukkannya ke dalam tabel saat aplikasi dijalankan.
+
+6. Testing: Melakukan operasi tambah dan hapus, kemudian memverifikasi apakah data di database PostgreSQL ikut berubah..)
 
 ---
 
@@ -44,30 +61,31 @@ System.out.println(p1.getNama());
 
 ## Hasil Eksekusi
 (Sertakan screenshot hasil eksekusi program.  
-![Screenshot hasil](screenshots/hasil.png)
+![Screenshot hasil](screenshots/Screenshot%202026-01-14%20180548.png)
+![Screenshot hasil](screenshots/Screenshot%202026-01-14%20180805.png)
 )
+
 ---
 
 ## Analisis
 (
-- Jelaskan bagaimana kode berjalan.  
-- Apa perbedaan pendekatan minggu ini dibanding minggu sebelumnya.  
-- Kendala yang dihadapi dan cara mengatasinya.  
+1. Analisis Kode: Penggunaan TableView memberikan tampilan yang jauh lebih profesional dan terorganisir dibandingkan ListView. Integrasi dengan ProductService memastikan bahwa aplikasi tetap mengikuti prinsip Dependency Inversion (DIP), di mana lapisan UI tidak mengetahui detail teknis query SQL.
+
+2. Perbedaan Pendekatan: Jika sebelumnya pada Minggu 12 tampilan bersifat statis atau sederhana, minggu ini aplikasi sudah mendukung interaksi penuh terhadap database (CRUD). Penggunaan Lambda Expression membuat kode Controller menjadi lebih pendek dan mudah dibaca dibandingkan menggunakan Anonymous Inner Class.
+
+3. Kendala dan Solusi: Kendala yang dihadapi adalah data tidak langsung muncul saat aplikasi dibuka. Solusinya adalah memanggil metode loadData() di dalam blok initialize() agar TableView terisi sesaat setelah komponen UI siap.
 )
 ---
 
 ## Kesimpulan
-(Tuliskan kesimpulan dari praktikum minggu ini.  
-Contoh: *Dengan menggunakan class dan object, program menjadi lebih terstruktur dan mudah dikembangkan.*)
+(Praktikum ini berhasil mengintegrasikan seluruh komponen sistem Agri-POS, mulai dari backend (Database & DAO) hingga frontend (JavaFX TableView). Dengan arsitektur MVC dan penggunaan Lambda, kode menjadi lebih modular, bersih, dan siap untuk dikembangkan menjadi aplikasi kasir yang lebih kompleks.*)
 
 ---
 
 ## Quiz
-(1. [Tuliskan kembali pertanyaan 1 dari panduan]  
-   **Jawaban:** …  
+(
+1. Apa keuntungan menggunakan TableView dibandingkan ListView? Jawaban: TableView memungkinkan data ditampilkan dalam format kolom yang terorganisir, mendukung pengurutan (sorting) otomatis per kolom, dan lebih mudah dipetakan langsung ke properti objek model melalui CellValueFactory.
 
-2. [Tuliskan kembali pertanyaan 2 dari panduan]  
-   **Jawaban:** …  
+2. Mengapa Lambda Expression sangat disarankan dalam event handling JavaFX? Jawaban: Karena Lambda membuat kode lebih ringkas (boilerplate-free), meningkatkan keterbacaan kode, dan karena sebagian besar event handler JavaFX adalah Functional Interface (hanya memiliki satu metode abstrak).
 
-3. [Tuliskan kembali pertanyaan 3 dari panduan]  
-   **Jawaban:** …  )
+3. Bagaimana cara memastikan data di TableView sinkron dengan Database? Jawaban: Dengan memanggil metode loadData() yang melakukan query findAll() ke database melalui DAO/Service setiap kali ada aksi yang mengubah data (seperti Tambah atau Hapus). )
