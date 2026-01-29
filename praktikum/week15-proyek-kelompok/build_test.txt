@@ -1,0 +1,104 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -------------------< com.upb.agripos:agripos-week15 >-------------------
+[INFO] Building Agri-POS Extended 1.0-FINAL
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[WARNING] 6 problems were encountered while building the effective model for org.openjfx:javafx-controls:jar:21 during dependency collection step for project (use -X to see details)
+[INFO] 
+[INFO] --- clean:3.2.0:clean (default-clean) @ agripos-week15 ---
+[INFO] Deleting c:\Users\Win11\Documents\oop 240202848\oop-240202848\praktikum\week15-proyek-kelompok\target
+[INFO] 
+[INFO] --- jacoco:0.8.8:prepare-agent (default) @ agripos-week15 ---
+[INFO] argLine set to "-javaagent:C:\\Users\\Win11\\.m2\\repository\\org\\jacoco\\org.jacoco.agent\\0.8.8\\org.jacoco.agent-0.8.8-runtime.jar=destfile=c:\\Users\\Win11\\Documents\\oop 240202848\\oop-240202848\\praktikum\\week15-proyek-kelompok\\target\\jacoco.exec"
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ agripos-week15 ---
+[INFO] skip non existing resourceDirectory c:\Users\Win11\Documents\oop 240202848\oop-240202848\praktikum\week15-proyek-kelompok\src\main\resources
+[INFO] 
+[INFO] --- compiler:3.11.0:compile (default-compile) @ agripos-week15 ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 47 source files with javac [debug target 11] to target\classes
+[INFO] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/view/PosView.java: Some input files use or override a deprecated API.
+[INFO] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/view/PosView.java: Recompile with -Xlint:deprecation for details.
+[INFO] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/view/ProductFormView.java: Some input files use unchecked or unsafe operations.
+[INFO] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/view/ProductFormView.java: Recompile with -Xlint:unchecked for details.
+[INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+[INFO] -------------------------------------------------------------
+[WARNING] COMPILATION WARNING : 
+[INFO] -------------------------------------------------------------
+[WARNING] location of system modules is not set in conjunction with -source 11
+  not setting the location of system modules may lead to class files that cannot run on JDK 11
+    --release 11 is recommended instead of -source 11 -target 11 because it sets the location of system modules automatically
+[INFO] 1 warning
+[INFO] -------------------------------------------------------------
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/AppJavaFX.java:[6,28] package com.upb.agripos.util does not exist
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/UserDAOImpl.java:[3,28] package com.upb.agripos.util does not exist
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/ProductDAOImpl.java:[5,28] package com.upb.agripos.util does not exist
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/DatabaseIntegrationTest.java:[4,28] package com.upb.agripos.util does not exist
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/AppJavaFX.java:[95,41] cannot find symbol
+  symbol:   variable DatabaseConnection
+  location: class com.upb.agripos.AppJavaFX
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/AppJavaFX.java:[144,41] cannot find symbol
+  symbol:   variable DatabaseConnection
+  location: class com.upb.agripos.AppJavaFX
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/UserDAOImpl.java:[93,16] cannot find symbol
+  symbol:   variable DatabaseConnection
+  location: class com.upb.agripos.dao.impl.UserDAOImpl
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/ProductDAOImpl.java:[20,16] cannot find symbol
+  symbol:   variable DatabaseConnection
+  location: class com.upb.agripos.dao.impl.ProductDAOImpl
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/view/KasirView.java:[75,32] incompatible types: com.upb.agripos.view.KasirView.LogoutCallback cannot be converted to com.upb.agripos.view.PosView.LogoutCallback
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/view/KasirView.java:[117,25] cannot find symbol
+  symbol:   method refreshProductList()
+  location: variable posView of type com.upb.agripos.view.PosView
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/DatabaseIntegrationTest.java:[41,9] cannot find symbol
+  symbol:   variable DatabaseConnection
+  location: class com.upb.agripos.dao.impl.DatabaseIntegrationTest
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/DatabaseIntegrationTest.java:[51,13] cannot find symbol
+  symbol:   variable DatabaseConnection
+  location: class com.upb.agripos.dao.impl.DatabaseIntegrationTest
+[INFO] 12 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  11.066 s
+[INFO] Finished at: 2026-01-28T02:36:36+07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.11.0:compile (default-compile) on project agripos-week15: Compilation failure: Compilation failure: 
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/AppJavaFX.java:[6,28] package com.upb.agripos.util does not exist
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/UserDAOImpl.java:[3,28] package com.upb.agripos.util does not exist
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/ProductDAOImpl.java:[5,28] package com.upb.agripos.util does not exist
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/DatabaseIntegrationTest.java:[4,28] package com.upb.agripos.util does not exist
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/AppJavaFX.java:[95,41] cannot find symbol
+[ERROR]   symbol:   variable DatabaseConnection
+[ERROR]   location: class com.upb.agripos.AppJavaFX
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/AppJavaFX.java:[144,41] cannot find symbol
+[ERROR]   symbol:   variable DatabaseConnection
+[ERROR]   location: class com.upb.agripos.AppJavaFX
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/UserDAOImpl.java:[93,16] cannot find symbol
+[ERROR]   symbol:   variable DatabaseConnection
+[ERROR]   location: class com.upb.agripos.dao.impl.UserDAOImpl
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/ProductDAOImpl.java:[20,16] cannot find symbol
+[ERROR]   symbol:   variable DatabaseConnection
+[ERROR]   location: class com.upb.agripos.dao.impl.ProductDAOImpl
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/view/KasirView.java:[75,32] incompatible types: com.upb.agripos.view.KasirView.LogoutCallback cannot be converted to com.upb.agripos.view.PosView.LogoutCallback
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/view/KasirView.java:[117,25] cannot find symbol
+[ERROR]   symbol:   method refreshProductList()
+[ERROR]   location: variable posView of type com.upb.agripos.view.PosView
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/DatabaseIntegrationTest.java:[41,9] cannot find symbol
+[ERROR]   symbol:   variable DatabaseConnection
+[ERROR]   location: class com.upb.agripos.dao.impl.DatabaseIntegrationTest
+[ERROR] /c:/Users/Win11/Documents/oop 240202848/oop-240202848/praktikum/week15-proyek-kelompok/src/main/java/com/upb/agripos/dao/impl/DatabaseIntegrationTest.java:[51,13] cannot find symbol
+[ERROR]   symbol:   variable DatabaseConnection
+[ERROR]   location: class com.upb.agripos.dao.impl.DatabaseIntegrationTest
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

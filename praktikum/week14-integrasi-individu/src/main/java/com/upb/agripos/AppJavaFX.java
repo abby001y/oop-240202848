@@ -2,6 +2,7 @@ package com.upb.agripos;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 
 import com.upb.agripos.controller.PosController;
 import com.upb.agripos.dao.ProductDAO;
@@ -16,40 +17,65 @@ import javafx.stage.Stage;
 
 public class AppJavaFX extends Application {
 
+    private Connection dbConnection;
+
     @Override
-    public void start(Stage stage) {
+    public void init() throws Exception {
+        // Melakukan inisialisasi berat di method init (Best Practice JavaFX)
+        System.out.println("Starting Agri-POS System...");
+        this.dbConnection = setupDatabase();
+    }
+
+    @Override
+    public void start(Stage primaryStage) {
         try {
-            // Cetak identitas ke console (sesuai Bab 1)
-            System.out.println("Hello World, I am Abbi priyoguno-240202848");
+            // Identitas Owner
+            displayIdentity();
 
-            // 1. Setup Database Connection (Bab 11)
-            Connection conn = DriverManager.getConnection(
-                "jdbc:postgresql://localhost:5432/agripos", 
-                "postgres", 
-                "postgres"
-            );
+            // Dependency Injection Layer
+            ProductDAO daoLayer = new ProductDAOImpl(dbConnection);
+            ProductService serviceLayer = new ProductService(daoLayer);
+            CartService basketService = new CartService(serviceLayer);
 
-            // 2. Setup MVC + Service + DAO Architecture (Bab 6, 11, 12, 13)
-            ProductDAO productDAO = new ProductDAOImpl(conn);
-            ProductService productService = new ProductService(productDAO);
-            CartService cartService = new CartService(productService);
+            // Interface & Interaction
+            PosView mainView = new PosView();
+            new PosController(serviceLayer, basketService, mainView);
 
-            // 3. Create View (Bab 12-13)
-            PosView view = new PosView();
-
-            // 4. Create Controller (Bab 12-13)
-            new PosController(productService, cartService, view);
-
-            // 5. Display Scene
-            Scene scene = new Scene(view, 1000, 800);
-            stage.setTitle("Agri-POS Week 14 - Abbi priyoguno (240202848)");
-            stage.setScene(scene);
-            stage.show();
+            // Configure Window
+            prepareStage(primaryStage, mainView);
+            primaryStage.show();
 
         } catch (Exception e) {
-            System.err.println("Error starting application: " + e.getMessage());
-            e.printStackTrace();
+            System.err.println("Critical Error: " + e.getMessage());
         }
+    }
+
+    private Connection setupDatabase() throws SQLException {
+        String url = "jdbc:postgresql://localhost:5432/agripos";
+        return DriverManager.getConnection(url, "postgres", "postgres");
+    }
+
+    private void displayIdentity() {
+        System.out.println("=========================================");
+        System.out.println("User: Abbi priyoguno | ID: 240202848");
+        System.out.println("Status: Application Running");
+        System.out.println("=========================================");
+    }
+
+    private void prepareStage(Stage stage, PosView view) {
+        Scene scene = new Scene(view, 1024, 768); // Ukuran sedikit berbeda
+        stage.setScene(scene);
+        stage.setTitle("Agri-POS Terminal - 240202848 (Abbi priyoguno)");
+    }
+
+    @Override
+    public void stop() throws Exception {
+        // Menutup koneksi database saat aplikasi di-close
+        if (dbConnection != null && !dbConnection.isClosed()) {
+            dbConnection.close();
+            System.out.println("Database connection closed safely.");
+        }
+        super.stop();
     }
 
     public static void main(String[] args) {
